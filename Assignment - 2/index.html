@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A2 - Assignment 2</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- ROW 1, COLUMN 1 -->
+    <nav class="nav-left">
+      <div class="logo">Insect</div>
+      <div class="search-bar">
+        <i class="ri-search-line"></i>
+        <input type="text" placeholder="Search...">
+      </div>
+    </nav>
+
+    <!-- ROW 1, COLUMN 2 -->
+    <nav class="nav-right">
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">About</a>
+      <a href="#">Gallery</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <!-- ROW 2, COLUMN 1 -->
+    <section class="content-left">
+      <div class="rotated-label">Classification</div>
+      <ul class="classification-list">
+        <li><strong>Class:</strong> <span>Insecta</span></li>
+        <li><strong>Order:</strong> <span>Coleoptera</span></li>
+        <li><strong>Family:</strong> <span>Cerambycidae</span></li>
+        <li><strong>Sub-Family:</strong> <span>Cerambycinae</span></li>
+        <li><strong>Tribe:</strong> <span>Callicromatini</span></li>
+        <li><strong>Genus:</strong> <span>Pachyteria</span></li>
+      </ul>
+    </section>
+
+    <!-- ROW 2, COLUMN 2 -->
+    <section class="content-right">
+
+      <div class="specs-row">
+
+        <div class="beetle-icon-box">
+          <i class="ri-bug-line"></i>
+          <span>32 mm</span>
+        </div>
+        
+        <div class="specs-divider"></div>
+
+        <div class="specs-details">
+          
+
+          <div class="spec-item">
+            <i class="ri-map-pin-line"></i>
+            <div>
+              <span class="spec-label">Locality</span>
+              <span class="spec-value">Malaysia</span>
+            </div>
+          </div>
+          <div class="spec-item">
+            <i class="ri-men-line"></i>
+            <div>
+              <span class="spec-label">Sex</span>
+              <span class="spec-value">Male</span>
+            </div>
+          </div>
+          <div class="spec-item">
+            <i class="ri-ruler-line"></i>
+            <div>
+              <span class="spec-label">Size</span>
+              <span class="spec-value">32 mm / 12 mm</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+<h1 class="species-name">Pachyteria<br>equestris</h1>
+      
+
+      <div class="price">$5.99</div>
+
+      <div class="toggle-options">
+        <div class="toggle-item">
+          <label class="toggle">
+            <input type="checkbox">
+            <span class="toggle-track"></span>
+          </label>
+          View detailed antennae
+        </div>
+        <div class="toggle-item">
+          <label class="toggle">
+            <input type="checkbox">
+            <span class="toggle-track"></span>
+          </label>
+          View underside
+        </div>
+      </div>
+
+      <button class="btn-add">Add to Collection</button>
+
+    </section>
+
+  </div>
+
+  <!-- Beetle image is OUTSIDE the grid on purpose -->
+  <!-- position: fixed in CSS handles its placement -->
+  <div class="beetle-container">
+    <img src="Beetle.png" alt="Beetle specimen">
+  </div>
+
+</body>
+</html>

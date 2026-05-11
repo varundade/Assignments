@@ -1,0 +1,371 @@
+:root {
+  --red:        #C0392B;
+  --white:      #FFFFFF;
+  --off-white:  #F5F0EB;
+  --dark:       #1A1A1A;
+  --gold:       #C9A84C;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'Lato', Arial, sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--off-white);
+  color: var(--dark);
+  min-height: 100vh;
+}
+
+/* ---- PAGE GRID ---- */
+
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+/* ---- NAV ---- */
+
+.nav-left {
+  background: var(--white);
+  padding: 28px 40px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: var(--off-white);
+  border-radius: 50px;
+  padding: 10px 20px;
+  gap: 10px;
+  flex: 1;
+  max-width: 280px;
+}
+
+.search-bar i {
+  color: #888;
+  font-size: 16px;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--dark);
+  width: 100%;
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: #aaa;
+}
+
+.nav-right {
+  background: var(--red);
+  padding: 28px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 36px;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.nav-right a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 300;
+  transition: color 0.2s;
+}
+
+.nav-right a:hover {
+  color: var(--white);
+}
+
+/* ---- LEFT PANEL ---- */
+
+.content-left {
+  background: var(--white);
+  padding: 60px 40px 60px 70px;
+  grid-column: 1;
+  grid-row: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;                      /* space between label area and list */
+}
+
+.rotated-label {
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 36px;
+  white-space: nowrap;
+  color: var(--dark);
+}
+
+.classification-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.classification-list li {
+  padding: 22px 0 22px 28px;     /* even top & bottom padding */
+  border-bottom: 1px solid #E8E0D8;
+  position: relative;
+}
+
+.classification-list li:last-child {
+  border-bottom: none;
+}
+
+.classification-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;                       /* dot sits exactly in the middle of each row */
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: var(--red);
+  border-radius: 50%;
+}
+
+.classification-list li strong {
+  display: inline;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.classification-list li span {
+  font-size: 15px;
+  font-weight: 300;
+  color: #555;
+}
+
+/* ---- BEETLE IMAGE ---- */
+
+.beetle-container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-58%, -52%);
+  z-index: 10;
+  pointer-events: none;
+  width: 430px;
+}
+
+.beetle-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+}
+
+/* ---- RIGHT PANEL ---- */
+
+.content-right {
+  background: var(--red);
+  padding: 60px 60px 60px 180px;  /* heavy left padding clears the beetle */
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.specs-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;            /* space between specs and name */
+}
+
+.beetle-icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.beetle-icon-box i {
+  font-size: 48px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.beetle-icon-box span {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.specs-divider {
+  width: 1px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.specs-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spec-item i {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  width: 20px;
+}
+
+.spec-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.55);
+  display: block;
+}
+
+.spec-value {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  display: block;
+}
+
+.species-name {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 3.5vw, 54px);
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 32px;
+}
+
+.price {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+
+.toggle-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.toggle-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+}
+
+/* ---- TOGGLE SWITCH ---- */
+
+.toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.toggle-track {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle-track::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle input:checked + .toggle-track {
+  background: var(--gold);
+}
+
+.toggle input:checked + .toggle-track::after {
+  transform: translateX(20px);
+}
+
+/* ---- BUTTON ---- */
+
+.btn-add {
+  background: var(--gold);
+  color: var(--dark);
+  border: none;
+  padding: 18px 40px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  transition: background 0.25s, transform 0.15s;
+}
+
+.btn-add:hover {
+  background: #b8923e;
+}
+
+.btn-add:active {
+  transform: scale(0.98);
+}
